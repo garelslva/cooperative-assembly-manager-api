@@ -38,19 +38,20 @@
 
 - 3 - api
 ```
-#  docker run --name api -e SERVER_PORT=8080 -e DATABASE_URL=postgres -e DATABASE_PORT=5432 -e DATABASE_NAME=cooperative-assembly-manager-api -e DATABASE_SSLMODE=disable -e REDIS_HOST=redis -e REDIS_PORT=6379 -p 8080:8080 .
+# docker build -t api .
+# docker run --name api -e SERVER_PORT=8080 -e DATABASE_URL=postgres -e DATABASE_PORT=5432 -e DATABASE_NAME=cooperative-assembly-manager-api -e DATABASE_SSLMODE=disable -e REDIS_HOST=redis -e REDIS_PORT=6379 -p 8080:8080 -it api
 ```
 
 ### Ou Subindo a aplicação Local usando comandos shell
 #### - api
 - Considera-se que:
-- - possui o postgres e o redis esta rodando localhost
+- - postgres e o redis esta rodando localhost
 - - o camando mvn clean install ja foi executado
-- - esse comando ira ser executado no path root do projeto
+- - esse comando deve ser executado no path root do projeto
 
 ```
 java -Xss512k -Xms512M -Xmx1024M -XX:MaxGCPauseMillis=500 -XX:+UseG1GC -XX:+DisableExplicitGC -XX:SurvivorRatio=6 -XX:MaxMetaspaceSize=256m -XX:+ParallelRefProcEnabled \
--Dserver.port=8088 \
+-Dserver.port=8080 \
 -Dpostgre.database.host=localhost \
 -Dpostgre.database.port=5432 \
 -Dpostgre.database.name=cooperative-assembly-manager-api \
