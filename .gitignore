@@ -36,6 +36,5 @@ build/
 deployments/.env-dev
 deployments/.env-hml
 deployments/.env-prd
-src/main/resources/application.properties
 teste100.pdf
 teste.pdf
