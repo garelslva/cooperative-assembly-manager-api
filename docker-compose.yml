@@ -1,0 +1,41 @@
+version: '3.2'
+services:
+
+  app:
+    build: .
+    container_name: api
+    restart: always
+    environment:
+      SERVER_PORT: 8080
+      DATABASE_URL: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: cooperative-assembly-manager-api
+      DATABASE_SSLMODE: disable
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      - redis
+      - postgres
+    ports:
+      - "8080:8080"
+
+  redis:
+    image: redis:7.0.11-alpine
+    container_name: redis
+    volumes:
+      - /tmp/redis
+    ports:
+      - "6379:6379"
+  
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: cooperative-assembly-manager-api
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - /tmp/postegreslocal
+    ports:
+      - "5432:5432"
