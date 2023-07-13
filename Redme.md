@@ -1,7 +1,7 @@
 # # Cooperative Assembly Manager API
 
 ### Requisitos minimos
-- java 20+
+- java 18+
 - maven 3.6.3+
 - postgresSQL 15.3
 - redis 7.0.11
@@ -111,12 +111,14 @@ curl -X 'POST' \
 - Exemplo Votar uma pauta
 ```
 curl -X 'POST' \
-  'http://localhost:8088/session' \
+  'http://localhost:8080/vote' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "limitTimeInSeconds": 1000,
-  "subjectId": 3
+  "associateId": 1,
+  "subjectId": 1,
+  "sessionId": 2,
+  "answerVote": "SIM"
 }'
 ```
 
