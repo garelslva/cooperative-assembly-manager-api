@@ -24,8 +24,8 @@
         <hibernate.type52.version>2.9.3</hibernate.type52.version>
         <spring.boot.maven.plugin.version>2.5.5</spring.boot.maven.plugin.version>
         <jacoco.maven.plugin.version>0.8.5</jacoco.maven.plugin.version>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
 		<log4j2.version>2.17.0</log4j2.version>
 		<spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
 		<springdoc-openapi.version>1.6.4</springdoc-openapi.version>
@@ -48,7 +48,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${web.version}</version>
 		</dependency>
 		<!--ACTUATOR-->
 		<dependency>
@@ -85,11 +84,6 @@
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.hibernate.validator</groupId>
-			<artifactId>hibernate-validator</artifactId>
-		</dependency>
-		<!-- Hikari -->
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
