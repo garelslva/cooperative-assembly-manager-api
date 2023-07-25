@@ -18,19 +18,14 @@
 
     <properties>
         <java.version>18</java.version>
-        <web.version>2.5.6</web.version>
-        <swagger.version>3.0.0</swagger.version>
-        <postegressql.version>42.2.5</postegressql.version>
         <hibernate.type52.version>2.9.3</hibernate.type52.version>
-        <spring.boot.maven.plugin.version>2.5.5</spring.boot.maven.plugin.version>
-        <jacoco.maven.plugin.version>0.8.5</jacoco.maven.plugin.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 		<log4j2.version>2.17.0</log4j2.version>
 		<spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
 		<springdoc-openapi.version>1.6.4</springdoc-openapi.version>
 		<lombok.version>1.18.22</lombok.version>
-		<postgresql.version>42.3.3</postgresql.version>
+		<postgresql.version>42.3.8</postgresql.version>
 		<commons-lang3>3.12.0</commons-lang3>
 		<equalsverifier.version>3.4.1</equalsverifier.version>
 		<mockito-inline.version>4.1.0</mockito-inline.version>

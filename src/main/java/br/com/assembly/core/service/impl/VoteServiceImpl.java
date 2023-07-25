@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -75,6 +76,7 @@ public class VoteServiceImpl implements VoteService {
         );
     }
 
+    @Transactional
     @Override
     public Vote send(final Vote vote) {
 
@@ -114,6 +116,7 @@ public class VoteServiceImpl implements VoteService {
                 .orElseThrow();
     }
 
+    @Transactional
     @Override
     public void deleteById(final Long id) {
         this.voteRepositoy.deleteById(this.findById(id).getId());

@@ -2,7 +2,6 @@ package br.com.assembly.storage.redis;
 
 import br.com.assembly.converter.Utils;
 import br.com.assembly.storage.redis.entity.SessionValue;
-import jdk.jshell.execution.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

@@ -38,6 +38,7 @@
 
 - 3 - api
 ```
+# mvn clean install
 # docker build -t api .
 # docker run --name api -e SERVER_PORT=8080 -e DATABASE_URL=postgres -e DATABASE_PORT=5432 -e DATABASE_NAME=cooperative-assembly-manager-api -e DATABASE_SSLMODE=disable -e REDIS_HOST=redis -e REDIS_PORT=6379 -p 8080:8080 -it api
 ```

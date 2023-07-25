@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -63,6 +64,7 @@ public class SubjectServiceImpl implements SubjectService {
                 .orElseThrow(() -> new NotFoundException(MessageError.NO_EXISTS(CONTEXT)));
     }
 
+    @Transactional
     @Override
     public Subject save(final Subject subject) {
         return (Subject) this.subjectConverter.toDomainOptional((SubjectEntity) this.subjectRepositoy.save(
@@ -70,6 +72,7 @@ public class SubjectServiceImpl implements SubjectService {
                 .orElseThrow(() -> new InternalServerErrorException());
     }
 
+    @Transactional
     @Override
     public void deleteById(final Long id) {
         this.subjectRepositoy.deleteById(this.findById(id).getId());

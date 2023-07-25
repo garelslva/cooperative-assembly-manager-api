@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -44,6 +45,7 @@ public class AssociateServiceImpl implements AssociateService {
                 .orElseThrow(() -> new NotFoundException(MessageError.NO_EXISTS(CONTEXT)));
     }
 
+    @Transactional
     @Override
     public Associate save(final Associate subject) {
         return (Associate) this.associateConverter.toDomainOptional((AssociateEntity) this.associateRepositoy.save(
@@ -51,6 +53,7 @@ public class AssociateServiceImpl implements AssociateService {
                 .orElseThrow();
     }
 
+    @Transactional
     @Override
     public void deleteById(final Long id) {
         this.associateRepositoy.deleteById(this.findById(id).getId());
